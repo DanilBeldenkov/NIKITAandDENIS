@@ -2,7 +2,7 @@ package com.company;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
 
         System.out.println("Кто сегодня у нас первым уйдёт с пар?");
 
@@ -16,8 +16,10 @@ public class Main {
         }
         System.out.print("Первым ушёл:");
         if (nikita.thread.isAlive()){
+            nikita.thread.join();
             System.out.print("Никита");
-        }else{
+        }
+        else{
             System.out.print("Денис");
         }
     }
